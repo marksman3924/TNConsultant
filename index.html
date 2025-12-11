@@ -1,0 +1,942 @@
+<html lang="vi" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tư Vấn Bát Tự Chiến Lược - Minh Anh</title>
+    <meta name="description" content="Định hình nghề, tài, hướng đi cho 2026–2028.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F4C75', // Dark Navy
+                        accent: '#D4AF37',  // Gold
+                        dark: '#1A1A1A',
+                        surface: '#F5F8FA',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        tight: '-0.025em',
+                        tighter: '-0.05em',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #E5E7EB; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .fade-enter {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        /* Testimonial Scroll Animation */
+        @keyframes scrollUp {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-33.33%); }
+        }
+
+        @keyframes scrollDown {
+            0% { transform: translateY(-33.33%); }
+            100% { transform: translateY(0); }
+        }
+
+        [data-scroll-column="1"] { animation: scrollUp 45s linear infinite; }
+        [data-scroll-column="2"] { animation: scrollDown 50s linear infinite; }
+        [data-scroll-column="3"] { animation: scrollUp 48s linear infinite; }
+
+        [data-scroll-column]:hover { animation-play-state: paused; }
+    </style>
+</head>
+<body class="font-sans text-dark bg-white">
+
+    <!-- 1. Hero Section -->
+    <section class="relative pt-12 pb-20 lg:pt-28 lg:pb-32 overflow-hidden bg-gradient-to-b from-white via-[#F5F8FA] to-white">
+        <!-- Background Decor -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#F0F4F8] to-transparent opacity-50 -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Text Content (Left) -->
+                <div class="order-2 lg:order-first lg:col-span-6 space-y-8 text-center lg:text-left fade-enter">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-2">
+                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                        Consulting / Clarity
+                    </div>
+                    
+                    <h1 class="font-serif font-semibold text-primary tracking-tight leading-[1.1]">
+                        <span class="block text-4xl sm:text-5xl lg:text-6xl mb-2">
+                            2026 sẽ là năm của <br>những <span class="text-accent italic">quyết định lớn.</span>
+                        </span>
+                    </h1>
+                    
+                    <p class="font-sans text-gray-600 text-lg sm:text-xl font-medium leading-relaxed max-w-lg mx-auto lg:mx-0">
+                        Bạn cần một bản đồ đủ rõ để không lựa sai hướng. Tư vấn Bát Tự 1:1 — định hình nghề, tài, hướng đi cho 2026–2028.
+                    </p>
+
+                    <div class="pt-2 flex flex-col sm:flex-row items-center lg:items-start gap-4">
+                        <a href="#booking" class="inline-flex items-center justify-center h-14 px-8 bg-primary text-white rounded-lg font-semibold text-lg hover:bg-[#0A3552] transition-all shadow-xl hover:shadow-primary/20 hover:-translate-y-1 w-full sm:w-auto">
+                            Đặt lịch tư vấn
+                        </a>
+                        <a href="#case-studies" class="inline-flex items-center justify-center h-14 px-8 bg-white text-gray-700 border border-gray-200 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-all w-full sm:w-auto">
+                            Xem Case Study
+                        </a>
+                    </div>
+                    
+                    <div class="pt-4 flex items-center justify-center lg:justify-start gap-4 text-sm text-gray-500 font-medium">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-gray-200 border-2 border-white"></div>
+                            <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></div>
+                            <div class="w-8 h-8 rounded-full bg-gray-400 border-2 border-white"></div>
+                        </div>
+                        <p>Sắc nét. Thực tế. Dựa trên năng lực thật.</p>
+                    </div>
+                </div>
+
+                <!-- Image & Chart Visual (Right) -->
+                <div class="order-1 lg:order-last lg:col-span-6 relative fade-enter delay-200 mt-8 lg:mt-0">
+                    <div class="relative w-full max-w-md mx-auto lg:mr-0 lg:ml-auto aspect-[4/5]">
+                        <div class="absolute top-6 -right-6 w-full h-full border-2 border-dashed border-primary/20 rounded-2xl z-0 hidden sm:block"></div>
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl z-0"></div>
+
+                        <div class="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-white z-10 bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop" alt="Minh Anh Consultant" class="object-cover w-full h-full hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent"></div>
+                        </div>
+
+                        <div class="absolute -bottom-8 -left-8 sm:-left-12 z-20 w-64 glass-panel p-5 rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] animate-float">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-widest">Chiến lược 2026</span>
+                                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            </div>
+                            
+                            <div class="relative w-full aspect-[2/1] flex items-end justify-between px-2 gap-2 mb-2">
+                                <div class="w-1/5 bg-gray-100 rounded-t-sm h-[40%] relative group">
+                                    <div class="absolute bottom-0 w-full bg-primary/20 h-full rounded-t-sm transition-all group-hover:bg-primary/40"></div>
+                                </div>
+                                <div class="w-1/5 bg-gray-100 rounded-t-sm h-[80%] relative group">
+                                    <div class="absolute bottom-0 w-full bg-accent h-full rounded-t-sm shadow-[0_0_10px_rgba(212,175,55,0.3)]"></div>
+                                </div>
+                                <div class="w-1/5 bg-gray-100 rounded-t-sm h-[30%] relative group">
+                                    <div class="absolute bottom-0 w-full bg-primary/20 h-full rounded-t-sm transition-all group-hover:bg-primary/40"></div>
+                                </div>
+                                <div class="w-1/5 bg-gray-100 rounded-t-sm h-[60%] relative group">
+                                    <div class="absolute bottom-0 w-full bg-primary/60 h-full rounded-t-sm transition-all group-hover:bg-primary/80"></div>
+                                </div>
+                                <div class="w-1/5 bg-gray-100 rounded-t-sm h-[20%] relative group">
+                                    <div class="absolute bottom-0 w-full bg-primary/10 h-full rounded-t-sm transition-all group-hover:bg-primary/30"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-5 pt-3 border-t border-gray-100">
+                                <p class="text-[11px] text-gray-500 leading-tight">
+                                    <span class="font-bold text-primary">Insight:</span> Đọc được "điểm bẻ lái" trong nghề và chỉ ra đúng chỗ cần xoay.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Case Studies (Reusing Sample Analysis Layout) -->
+    <section id="case-studies" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                
+                <!-- Text Content (Moved For Who here) -->
+                <div class="space-y-8">
+                    <h2 class="text-3xl lg:text-4xl font-serif font-semibold text-primary mb-4 tracking-tight">Buổi tư vấn này dành cho ai?</h2>
+                    <p class="text-lg text-gray-600 font-medium">Nếu bạn thấy mình "có tiềm năng, nhưng chưa vào đúng vị trí" — thì đây là đúng dạng vấn đề tôi giải rất nhanh.</p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1"><i data-lucide="check-circle" class="w-5 h-5 text-accent"></i></div>
+                            <p class="text-gray-600 text-sm">Bạn đang đứng trước một ngã rẽ nghề nghiệp hoặc muốn đổi nghề nhưng chưa tự tin.</p>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1"><i data-lucide="check-circle" class="w-5 h-5 text-accent"></i></div>
+                            <p class="text-gray-600 text-sm">Bạn đang làm nhiều thứ nhưng không rõ "điểm mạnh thật" của mình.</p>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1"><i data-lucide="check-circle" class="w-5 h-5 text-accent"></i></div>
+                            <p class="text-gray-600 text-sm">Bạn cảm thấy 2025 quá nhiễu — và muốn 2026 phải rõ ràng hơn.</p>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1"><i data-lucide="check-circle" class="w-5 h-5 text-accent"></i></div>
+                            <p class="text-gray-600 text-sm">Bạn giỏi, có kinh nghiệm, nhưng chưa biết cách đặt bản thân vào đúng thị trường.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Dashboard / Report Mockup (Representing Case Studies) -->
+                <div class="relative">
+                    <div class="bg-gray-50 rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+                        <!-- Window Controls -->
+                        <div class="h-8 bg-gray-100 border-b border-gray-200 flex items-center px-4 gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                            <div class="ml-4 text-xs text-gray-400 font-mono">CASE_STUDIES.PDF</div>
+                        </div>
+
+                        <div class="p-8 bg-white">
+                            <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">Case Study Thực Tế (Ẩn danh)</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="p-4 bg-surface rounded-lg border border-gray-100">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h4 class="font-bold text-primary text-sm">Case A — Manager 35 tuổi</h4>
+                                        <span class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded">Corporate → Consulting</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mb-1"><span class="font-semibold">Vấn đề:</span> Làm tốt nhưng không lên vị trí tiếp theo.</p>
+                                    <p class="text-xs text-gray-800"><span class="font-semibold text-accent">Kết quả:</span> Tăng thu nhập + lên đúng vai trong 4 tháng.</p>
+                                </div>
+
+                                <div class="p-4 bg-surface rounded-lg border border-gray-100">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h4 class="font-bold text-primary text-sm">Case B — Freelancer 29 tuổi</h4>
+                                        <span class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded">Đa kỹ năng</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mb-1"><span class="font-semibold">Vấn đề:</span> Lan man, không có hệ thống dịch vụ.</p>
+                                    <p class="text-xs text-gray-800"><span class="font-semibold text-accent">Kết quả:</span> Gom 1 mũi nhọn, tăng gấp 2 giá trị HĐ.</p>
+                                </div>
+
+                                <div class="p-4 bg-surface rounded-lg border border-gray-100">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h4 class="font-bold text-primary text-sm">Case C — Founder 40 tuổi</h4>
+                                        <span class="text-[10px] bg-red-100 text-red-700 px-2 py-0.5 rounded">Chu kỳ chậm</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mb-1"><span class="font-semibold">Vấn đề:</span> Mô hình không hợp khí vận 2025–2026.</p>
+                                    <p class="text-xs text-gray-800"><span class="font-semibold text-accent">Kết quả:</span> Chỉnh mô hình, năng lượng phục hồi.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Feedback Overlay -->
+                    <div class="absolute -bottom-6 -right-4 max-w-xs bg-white p-4 rounded-xl shadow-xl border border-gray-100">
+                         <p class="text-xs text-gray-700 font-medium">"Giải pháp: Gom 1 mũi, tạo 1 sản phẩm chủ lực."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Auto-Scrolling Testimonials -->
+    <section class="py-24 bg-surface overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header for Testimonial -->
+            <div class="mb-12 text-center">
+                <span class="text-sm font-semibold text-accent uppercase tracking-wider">Stories</span>
+                <h2 class="mt-3 text-3xl sm:text-4xl font-serif font-semibold text-primary tracking-tight">
+                    Những người đã tìm thấy <br> <span class="italic text-gray-500">hướng đi rõ ràng.</span>
+                </h2>
+                <div class="mt-6 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-1.5 shadow-sm">
+                    <span class="inline-flex items-center -space-x-2">
+                        <div class="h-6 w-6 rounded-full bg-gray-200 ring-2 ring-white flex items-center justify-center text-[8px] font-bold text-gray-500">M</div>
+                        <div class="h-6 w-6 rounded-full bg-gray-300 ring-2 ring-white flex items-center justify-center text-[8px] font-bold text-gray-500">H</div>
+                        <div class="h-6 w-6 rounded-full bg-gray-400 ring-2 ring-white flex items-center justify-center text-[8px] font-bold text-gray-500">T</div>
+                        <div class="h-6 w-6 rounded-full bg-primary ring-2 ring-white flex items-center justify-center text-[8px] font-bold text-white">+</div>
+                    </span>
+                    <span class="ml-2 inline-flex items-center gap-1 text-xs font-medium text-gray-500">
+                        <i data-lucide="star" class="w-3 h-3 fill-accent text-accent"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-accent text-accent"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-accent text-accent"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-accent text-accent"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-accent text-accent"></i>
+                        <span class="ml-1 text-dark">4.9/5 Trust Score</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Scrolling Grid -->
+            <div class="grid grid-cols-1 overflow-hidden md:grid-cols-3 gap-6 h-[500px] md:h-[600px]" 
+                 style="mask-image: linear-gradient(180deg, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, black 15%, black 85%, transparent);">
+                
+                <!-- Column 1: Scroll Up -->
+                <div class="overflow-hidden relative">
+                    <div data-scroll-column="1" class="space-y-6">
+                        <!-- Item 1.1 -->
+                        <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <blockquote class="text-sm text-gray-600 leading-relaxed">
+                                <span class="inline-flex items-start gap-2">
+                                    <i data-lucide="quote" class="w-4 h-4 text-accent/50 flex-shrink-0 mt-1"></i>
+                                    "Mình đã mất 2 năm loay hoay giữa việc làm thuê hay ra riêng. Buổi tư vấn chỉ ra chính xác thời điểm 'thiên thời' để mình bung sức. Rất thực tế."
+                                </span>
+                            </blockquote>
+                            <div class="mt-5 flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-primary font-bold text-sm">H</div>
+                                <div>
+                                    <div class="text-sm font-bold text-dark">Hoàng Minh</div>
+                                    <div class="text-xs text-gray-400">Marketing Manager</div>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <!-- Item 1.2 -->
+                        <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <blockquote class="text-sm text-gray-600 leading-relaxed">
+                                <span class="inline-flex items-start gap-2">
+                                    <i data-lucide="quote" class="w-4 h-4 text-accent/50 flex-shrink-0 mt-1"></i>
+                                    "Không mê tín, hoàn toàn logic. Minh Anh phân tích cấu trúc nghề của mình và chỉ ra tại sao mình luôn cảm thấy 'chưa tới'. Giờ mình đã biết cần tập trung vào đâu."
+                                </span>
+                            </blockquote>
+                            <div class="mt-5 flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-purple-50 flex items-center justify-center text-purple-700 font-bold text-sm">L</div>
+                                <div>
+                                    <div class="text-sm font-bold text-dark">Linh Chi</div>
+                                    <div class="text-xs text-gray-400">Content Creator</div>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <!-- Item 1.3 -->
+                        <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <blockquote class="text-sm text-gray-600 leading-relaxed">
+                                <span class="inline-flex items-start gap-2">
+                                    <i data-lucide="quote" class="w-4 h-4 text-accent/50 flex-shrink-0 mt-1"></i>
+                                    "Đáng giá nhất là phần chiến lược 3 năm. Mình biết năm nào nên thủ, năm nào nên công. Đỡ mất tiền ngu rất nhiều."
+                                </span>
+                            </blockquote>
+                            <div class="mt-5 flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-green-50 flex items-center justify-center text-green-700 font-bold text-sm">T</div>
+                                <div>
+                                    <div class="text-sm font-bold text-dark">Tuấn Anh</div>
+                                    <div class="text-xs text-gray-400">SME Founder</div>
+                                </div>
+                            </div>
+                        </article>
+
+                         <!-- Duplicate for Loop 1 -->
+                         <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <blockquote class="text-sm text-gray-600 leading-relaxed">
+                                <span class="inline-flex items-start gap-2">
+                                    <i data-lucide="quote" class="w-4 h-4 text-accent/50 flex-shrink-0 mt-1"></i>
+                                    "Mình đã mất 2 năm loay hoay giữa việc làm thuê hay ra riêng. Buổi tư vấn chỉ ra chính xác thời điểm 'thiên thời' để mình bung sức. Rất thực tế."
+                                </span>
+                            </blockquote>
+                            <div class="mt-5 flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-primary font-bold text-sm">H</div>
+                                <div>
+                                    <div class="text-sm font-bold text-dark">Hoàng Minh</div>
+                                    <div class="text-xs text-gray-400">Marketing Manager</div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Column 2: Scroll Down -->
+                <div class="overflow-hidden relative">
+                    <div data-scroll-column="2" class="space-y-6">
+                        <!-- Item 2.1 -->
+                        <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <blockquote class="text-sm text-gray-600 leading-relaxed">
+                                <span class="inline-flex items-start gap-2">
+                                    <i data-lucide="quote" class="w-4 h-4 text-accent/50 flex-shrink-0 mt-1"></i>
+                                    "Khác hẳn xem tử vi thông thường. Đây là Career Consulting dựa trên Bát Tự. Rất sharp và đi thẳng vào vấn đề tài chính."
+                                </span>
+                            </blockquote>
+                            <div class="mt-5 flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-700 font-bold text-sm">P</div>
+                                <div>
+                                    <div class="text-sm font-bold text-dark">Phương Thảo</div>
+                                    <div class="text-xs text-gray-400">Senior Designer</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Item 2.2 -->
+                        <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <blockquote class="text-sm text-gray-600 leading-relaxed">
+                                <span class="inline-flex items-start gap-2">
+                                    <i data-lucide="quote" class="w-4 h-4 text-accent/50 flex-shrink-0 mt-1"></i>
+                                    "Mình đang định nhảy việc thì được khuyên nên chờ qua tháng 6/2026. Sau đó nhìn lại thị trường mới thấy lời khuyên đó cứu mình một bàn thua trông thấy."
+                                </span>
+                            </blockquote>
+                            <div class="mt-5 flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-red-50 flex items-center justify-center text-red-700 font-bold text-sm">K</div>
+                                <div>
+                                    <div class="text-sm font-bold text-dark">Kiên Trung</div>
+                                    <div class="text-xs text-gray-400">Software Engineer</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Item 2.3 -->
+                        <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <blockquote class="text-sm text-gray-600 leading-relaxed">
+                                <span class="inline-flex items-start gap-2">
+                                    <i data-lucide="quote" class="w-4 h-4 text-accent/50 flex-shrink-0 mt-1"></i>
+                                    "Gọn gàng. Không lan man. Bản report sau buổi tư vấn là thứ mình mở ra xem hàng tháng để check lại lộ trình."
+                                </span>
+                            </blockquote>
+                            <div class="mt-5 flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-bold text-sm">A</div>
+                                <div>
+                                    <div class="text-sm font-bold text-dark">An Nhiên</div>
+                                    <div class="text-xs text-gray-400">Freelancer</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Duplicate for Loop 2 -->
+                        <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <blockquote class="text-sm text-gray-600 leading-relaxed">
+                                <span class="inline-flex items-start gap-2">
+                                    <i data-lucide="quote" class="w-4 h-4 text-accent/50 flex-shrink-0 mt-1"></i>
+                                    "Khác hẳn xem tử vi thông thường. Đây là Career Consulting dựa trên Bát Tự. Rất sharp và đi thẳng vào vấn đề tài chính."
+                                </span>
+                            </blockquote>
+                            <div class="mt-5 flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-700 font-bold text-sm">P</div>
+                                <div>
+                                    <div class="text-sm font-bold text-dark">Phương Thảo</div>
+                                    <div class="text-xs text-gray-400">Senior Designer</div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Column 3: Scroll Up -->
+                <div class="overflow-hidden relative hidden md:block">
+                    <div data-scroll-column="3" class="space-y-6">
+                        <!-- Item 3.1 -->
+                        <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <blockquote class="text-sm text-gray-600 leading-relaxed">
+                                <span class="inline-flex items-start gap-2">
+                                    <i data-lucide="quote" class="w-4 h-4 text-accent/50 flex-shrink-0 mt-1"></i>
+                                    "Cảm giác như được gỡ rối tơ vò. Mình biết chính xác lane nào hợp với năng lực lõi của mình, không còn đứng núi này trông núi nọ."
+                                </span>
+                            </blockquote>
+                            <div class="mt-5 flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-700 font-bold text-sm">D</div>
+                                <div>
+                                    <div class="text-sm font-bold text-dark">Duy Khánh</div>
+                                    <div class="text-xs text-gray-400">Project Manager</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Item 3.2 -->
+                        <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <blockquote class="text-sm text-gray-600 leading-relaxed">
+                                <span class="inline-flex items-start gap-2">
+                                    <i data-lucide="quote" class="w-4 h-4 text-accent/50 flex-shrink-0 mt-1"></i>
+                                    "Dịch vụ 10 điểm. Mình thích cách Minh Anh kết hợp giữa huyền học và tư duy kinh doanh hiện đại. Rất hiếm người làm được."
+                                </span>
+                            </blockquote>
+                            <div class="mt-5 flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-teal-50 flex items-center justify-center text-teal-700 font-bold text-sm">M</div>
+                                <div>
+                                    <div class="text-sm font-bold text-dark">Mai Anh</div>
+                                    <div class="text-xs text-gray-400">Startup Founder</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Item 3.3 -->
+                        <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <blockquote class="text-sm text-gray-600 leading-relaxed">
+                                <span class="inline-flex items-start gap-2">
+                                    <i data-lucide="quote" class="w-4 h-4 text-accent/50 flex-shrink-0 mt-1"></i>
+                                    "Chỉ sau 90 phút, mình có một lộ trình cho 3 năm tới. Sự tự tin quay trở lại khi mình biết mình đang đi đúng hướng."
+                                </span>
+                            </blockquote>
+                            <div class="mt-5 flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-pink-50 flex items-center justify-center text-pink-700 font-bold text-sm">Q</div>
+                                <div>
+                                    <div class="text-sm font-bold text-dark">Quỳnh Nga</div>
+                                    <div class="text-xs text-gray-400">HR Director</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Duplicate for Loop 3 -->
+                        <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <blockquote class="text-sm text-gray-600 leading-relaxed">
+                                <span class="inline-flex items-start gap-2">
+                                    <i data-lucide="quote" class="w-4 h-4 text-accent/50 flex-shrink-0 mt-1"></i>
+                                    "Cảm giác như được gỡ rối tơ vò. Mình biết chính xác lane nào hợp với năng lực lõi của mình, không còn đứng núi này trông núi nọ."
+                                </span>
+                            </blockquote>
+                            <div class="mt-5 flex items-center gap-3">
+                                <div class="h-10 w-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-700 font-bold text-sm">D</div>
+                                <div>
+                                    <div class="text-sm font-bold text-dark">Duy Khánh</div>
+                                    <div class="text-xs text-gray-400">Project Manager</div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. What You Get (Reusing Pain & Desire Section) -->
+    <section class="py-24 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                
+                <div class="lg:col-span-4">
+                    <h2 class="text-3xl font-serif font-semibold leading-tight mb-6">
+                        Bạn sẽ nhận được gì sau buổi tư vấn?
+                    </h2>
+                    <p class="text-primary-100 text-lg opacity-80 mb-8">
+                        Quay về thứ cốt lõi: Năng lực thật – dòng khí năm – vị trí phù hợp của bạn trong thị trường.
+                    </p>
+                    <div class="h-1 w-20 bg-accent rounded-full"></div>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <div class="grid md:grid-cols-2 gap-x-8 gap-y-10">
+                        <div class="flex gap-4 group">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full bg-accent flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                    <i data-lucide="map" class="w-3.5 h-3.5 text-primary stroke-[3]"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">1. Một bản đồ nghề rõ ràng</h4>
+                                <p class="text-gray-100 text-sm opacity-80">Biết mình hợp vai trò gì: Specialist / Consultant / Freelancer / Founder.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 group">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full bg-accent flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                    <i data-lucide="trending-up" class="w-3.5 h-3.5 text-primary stroke-[3]"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">2. Hướng đi tối ưu 2026–2028</h4>
+                                <p class="text-gray-100 text-sm opacity-80">Năm nào mở – năm nào gom – năm nào nên đổi vai.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 group">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full bg-accent flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                    <i data-lucide="zap" class="w-3.5 h-3.5 text-primary stroke-[3]"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">3. Clarity về năng lực lõi</h4>
+                                <p class="text-gray-100 text-sm opacity-80">Bạn giỏi thật điều gì, và điều gì nên dẹp ngay lập tức.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 group">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full bg-accent flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                    <i data-lucide="target" class="w-3.5 h-3.5 text-primary stroke-[3]"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">4. Lane nghề phù hợp nhất</h4>
+                                <p class="text-gray-100 text-sm opacity-80">Thị trường nào bạn vào thì "bật", thị trường nào vào sẽ "tắc".</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 group">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full bg-accent flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                    <i data-lucide="calendar" class="w-3.5 h-3.5 text-primary stroke-[3]"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">5. Một chiến lược 90 ngày</h4>
+                                <p class="text-gray-100 text-sm opacity-80">Đơn giản – khả thi – đúng thời điểm khí vận.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 group">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full bg-accent flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                    <i data-lucide="x-circle" class="w-3.5 h-3.5 text-primary stroke-[3]"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">6. Danh sách "việc nên dừng"</h4>
+                                <p class="text-gray-100 text-sm opacity-80">Để giảm nhiễu và giữ năng lượng tập trung.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Why 2026 (Reusing Value Proposition Section) -->
+    <section class="py-24 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-3xl lg:text-4xl font-serif font-semibold text-dark leading-tight tracking-tight">
+                        Vì sao 2026 quan trọng?
+                    </h2>
+                    <p class="text-gray-600">2026 là một năm "định hình cấu trúc nghề". 2026 không phải năm "thử nhiều thứ". Đó là năm chốt nghề – chốt lane – bắt đầu xây nền.</p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex gap-4 items-start group">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-primary mt-1 shadow-sm group-hover:border-accent transition-colors">
+                                <i data-lucide="anchor" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark text-lg">Định hình 5-7 năm tới</h4>
+                                <p class="text-gray-600 text-sm mt-1">Nghề bạn chọn trong 2026 sẽ ảnh hưởng trực tiếp đến chu kỳ 5-7 năm tiếp theo.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 items-start group">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-primary mt-1 shadow-sm group-hover:border-accent transition-colors">
+                                <i data-lucide="wind" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark text-lg">Tài khí đi thẳng</h4>
+                                <p class="text-gray-600 text-sm mt-1">Nếu bạn rõ → tài khí đi thẳng. Nếu bạn mơ hồ → bạn dễ làm sai lane → tắc năng lượng.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 items-start group">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-primary mt-1 shadow-sm group-hover:border-accent transition-colors">
+                                <i data-lucide="crosshair" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark text-lg">Vị trí cạnh tranh</h4>
+                                <p class="text-gray-600 text-sm mt-1">Nếu bạn chọn đúng thị trường trong năm này → bạn có vị trí cạnh tranh rất mạnh.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Abstract Visual -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent transform rotate-6 rounded-2xl"></div>
+                    <div class="relative bg-white border border-gray-100 rounded-2xl p-8 shadow-xl">
+                        <div class="flex items-center justify-between mb-6 border-b border-gray-50 pb-4">
+                            <div class="text-xs font-semibold text-gray-400 tracking-widest">STRATEGY_2026</div>
+                            <div class="text-primary font-serif font-semibold italic">Insightful</div>
+                        </div>
+                        <div class="space-y-4 opacity-50">
+                            <div class="h-3 bg-gray-200 rounded w-3/4"></div>
+                            <div class="h-3 bg-gray-200 rounded w-full"></div>
+                        </div>
+                        <div class="mt-8 p-6 bg-surface rounded-xl border border-dashed border-gray-200 text-center">
+                            <i data-lucide="layers" class="w-8 h-8 text-accent mx-auto mb-3"></i>
+                            <span class="text-sm font-semibold text-dark block">Chốt nghề – Chốt lane</span>
+                            <span class="text-xs text-gray-500">Xây nền tảng vững chắc</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 3 Reasons Stuck (Reusing Comparison Table) -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-semibold text-dark">Bạn đang kẹt vì 3 lý do chính</h2>
+                <p class="text-gray-500 mt-4">Gọn – khoa học – dễ hiểu</p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <div class="min-w-[800px] grid grid-cols-3 gap-0 bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                    <!-- Column 1 -->
+                    <div class="p-8 border-r border-gray-100 bg-gray-50/50">
+                        <h3 class="text-lg font-semibold text-gray-700 mb-6">1. Quá nhiều lựa chọn</h3>
+                        <p class="text-sm text-gray-500 mb-4">Không đủ tiêu chí để quyết.</p>
+                        <div class="flex gap-2 text-sm text-gray-600">
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-primary mt-1"></i>
+                            <span>Bạn rối không phải vì kém, mà vì mọi lane đều "tương đối hợp".</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 2 -->
+                    <div class="p-8 border-r border-gray-100">
+                        <h3 class="text-lg font-semibold text-gray-700 mb-6">2. Thiếu góc nhìn hệ thống</h3>
+                        <p class="text-sm text-gray-500 mb-4">Để thấy rõ bản đồ nghề.</p>
+                        <div class="flex gap-2 text-sm text-gray-600">
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-primary mt-1"></i>
+                            <span>Khi không biết mình giỏi nhất điều gì, bạn khó chốt hướng.</span>
+                        </div>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="p-8 bg-primary/5 relative">
+                        <div class="absolute top-0 inset-x-0 h-1 bg-accent"></div>
+                        <h3 class="text-xl font-semibold text-primary mb-6 flex items-center gap-2">
+                            3. 2025 dễ phân tán
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-4 font-medium">Khí vận buộc bạn phải lọc lại.</p>
+                        <div class="flex gap-2 text-sm text-gray-800 font-medium">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accent mt-1"></i>
+                            <span>Giải pháp: Quay về năng lực thật & vị trí phù hợp trong thị trường.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Difference (Reusing About Me) -->
+    <section class="py-24 bg-dark text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gray-800/20 skew-x-12 transform origin-top-right"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/3">
+                    <div class="aspect-[3/4] rounded-lg overflow-hidden border border-gray-700 shadow-2xl relative">
+                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop" alt="Minh Anh Portrait" class="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-500">
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 space-y-8">
+                    <h2 class="text-3xl lg:text-4xl font-serif font-semibold">Điều khác biệt của tôi</h2>
+                    <div class="space-y-4 text-gray-300 leading-relaxed font-light">
+                        <p class="text-xl text-white font-medium">Tôi không đọc tử vi theo "tốt – xấu".</p>
+                        <p>
+                            Tôi đọc dòng khí: năm này đẩy bạn đi đâu, chặn bạn ở đâu. Bóc tách logic vì sao bạn đang kẹt, vì sao bạn phân tán.
+                        </p>
+                        <p>
+                            Tôi giải thích theo cách consulting: rõ ràng, có luận cứ, có kết luận. Thiết kế hướng đi sát năng lực lõi của bạn chứ không áp công thức chung.
+                        </p>
+                        <p class="text-accent italic font-medium">
+                            Cốt lõi: Tôi đọc được "điểm bẻ lái" trong nghề của bạn — và chỉ ra đúng chỗ cần xoay.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-8 pt-8 border-t border-gray-800">
+                        <div>
+                            <p class="text-3xl font-bold text-white tracking-tighter">Clarity</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Rất nhanh</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-white tracking-tighter">Logic</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Khoa học</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-white tracking-tighter">Action</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Thực tế</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Workflow (Reusing Pricing) -->
+    <section id="booking" class="py-24 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-lg mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+                <!-- Header -->
+                <div class="bg-primary px-8 py-3 text-center">
+                    <div class="flex items-center justify-center gap-2 text-white/90 text-sm font-medium">
+                        <i data-lucide="clipboard-list" class="w-4 h-4"></i>
+                        <span>Consulting Workflow</span>
+                    </div>
+                </div>
+                
+                <!-- Body -->
+                <div class="p-8 sm:p-12 text-center">
+                    <h3 class="text-2xl font-serif font-semibold text-dark mb-2">Quy Trình Tư Vấn</h3>
+                    <p class="text-gray-500 text-sm mb-8">Không huyền bí. Không màu mè. Chỉ chiến lược.</p>
+                    
+                    <ul class="text-left space-y-4 mb-10 max-w-xs mx-auto text-gray-600 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-primary mt-0.5"></i>
+                            <span><strong class="text-dark">Thu thập ngắn:</strong> mục tiêu – trạng thái – lịch sử nghề.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-primary mt-0.5"></i>
+                            <span><strong class="text-dark">Phân tích:</strong> khí vận + năng lực lõi + cấu trúc nghề.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-primary mt-0.5"></i>
+                            <span><strong class="text-dark">Chẩn đoán:</strong> Chỉ ra chính xác điểm tắc – điểm mở.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-primary mt-0.5"></i>
+                            <span><strong class="text-dark">Đề xuất:</strong> 2–3 hướng đi có thể áp dụng ngay.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-primary mt-0.5"></i>
+                            <span><strong class="text-dark">Q&A:</strong> Giải đáp tự do.</span>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="block w-full py-4 rounded-lg bg-primary text-white font-semibold text-lg hover:bg-[#0A3552] transition-colors shadow-lg">
+                        Đặt lịch tư vấn 1:1
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Doubts/Philosophy (Reusing FAQ) -->
+    <section class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-serif font-semibold text-center mb-12">Nếu bạn đang băn khoăn…</h2>
+            
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <details class="group bg-gray-50 p-6 rounded-xl border border-gray-100 cursor-pointer" open>
+                    <summary class="flex justify-between items-center font-semibold text-dark">
+                        Bạn không cần tin vào tử vi. Bạn chỉ cần muốn:
+                        <span class="transition-transform group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 mt-4 text-sm leading-relaxed pl-1 space-y-2">
+                        <p>• Hiểu bản thân rõ hơn</p>
+                        <p>• Chọn đúng hướng</p>
+                        <p>• Bắt đầu 2026 bằng trạng thái tỉnh táo</p>
+                        <p>• Không lãng phí 1–2 năm vào lane sai</p>
+                    </div>
+                </details>
+
+                <!-- Q2 -->
+                <details class="group bg-gray-50 p-6 rounded-xl border border-gray-100 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-dark">
+                        Tư vấn của tôi dựa trên cơ sở nào?
+                        <span class="transition-transform group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 mt-4 text-sm leading-relaxed pl-1 space-y-2">
+                        <p>• <strong>Khí vận:</strong> Động lực của năm.</p>
+                        <p>• <strong>Bản mệnh:</strong> Năng lực gốc của bạn.</p>
+                        <p>• <strong>Bối cảnh thật:</strong> Không template hoá, hoàn toàn thực tế.</p>
+                    </div>
+                </details>
+
+                <!-- Q3 -->
+                <details class="group bg-gray-50 p-6 rounded-xl border border-gray-100 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-dark">
+                        Tính ứng dụng ra sao?
+                        <span class="transition-transform group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 text-sm leading-relaxed pl-1">
+                        Nó thực tế. Nó actionable. Nó dành cho người có tư duy nghề nghiệp nghiêm túc.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Final CTA -->
+    <section class="py-24 bg-primary relative overflow-hidden text-center">
+        <!-- Abstract Decoration -->
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-5xl font-serif font-semibold text-white mb-8 tracking-tight">
+                Vào 2026 với một kế hoạch rõ ràng
+            </h2>
+            <p class="text-primary-100 text-lg mb-8 max-w-2xl mx-auto">
+                Một hướng đi đúng, không còn mông lung – không còn phân tán.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#booking" class="inline-flex items-center justify-center px-10 py-4 bg-white text-primary rounded-lg font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover:-translate-y-1">
+                    Đặt lịch tư vấn 1:1
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div class="text-left">
+                    <h3 class="text-xl font-serif font-bold text-primary">Minh Anh Bazi</h3>
+                    <p class="text-sm text-gray-500 mt-2">Chiến lược nghề nghiệp & Định hướng 2026.</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i data-lucide="mail" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>© 2024 Minh Anh. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-dark">Chính sách bảo mật</a>
+                    <a href="#" class="hover:text-dark">Điều khoản</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons({
+            attrs: {
+                'stroke-width': 1.5
+            }
+        });
+    </script>
+
+</body></html>
