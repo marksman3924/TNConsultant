@@ -1,0 +1,5 @@
+{
+  "name": "TN Consultant Blog",
+  "description": "Astro-based blog system using Notion CMS and Cloudinary for TN Consultant.",
+  "requestFramePermissions": []
+}

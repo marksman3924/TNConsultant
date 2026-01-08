@@ -1,0 +1,144 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import NotionRenderer from '../../components/NotionRenderer.astro';
+import { getPublishedPosts, getPostBlocks } from '../../lib/notion';
+import type { Post } from '../../types';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  
+  console.log(`[Build] Found ${posts.length} published posts`);
+  
+  return posts.map((post) => {
+    console.log(`[Build] Creating route: /blog/${post.slug}`);
+    return {
+      params: { slug: post.slug },
+      props: { post },
+    };
+  });
+}
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+
+const blocks = await getPostBlocks(post.id);
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('vi-VN', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+};
+---
+
+<BlogLayout post={post}>
+  {(post.cover || post.coverImage) && (
+    <div class="w-full aspect-[16/9] mb-12 rounded-2xl overflow-hidden shadow-xl">
+      <img 
+        src={post.cover || post.coverImage} 
+        alt={post.title}
+        class="w-full h-full object-cover"
+      />
+    </div>
+  )}
+
+  <header class="mb-12 text-center">
+    {post.category && (
+      <div class="inline-block px-4 py-2 bg-cream rounded-full text-primary font-semibold text-sm mb-4 border border-accent/20">
+        {post.category}
+      </div>
+    )}
+    
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 tracking-tight leading-tight">
+      {post.title}
+    </h1>
+    
+    <div class="flex flex-wrap items-center justify-center gap-4 text-neutral-gray text-sm">
+      <time datetime={post.date} class="flex items-center gap-1.5">
+        <i data-lucide="calendar" class="w-4 h-4"></i>
+        {formatDate(post.date)}
+      </time>
+      <span class="text-neutral-gray/40">•</span>
+      <span class="flex items-center gap-1.5">
+        <i data-lucide="clock" class="w-4 h-4"></i>
+        5 phút đọc
+      </span>
+      {post.author && (
+        <>
+          <span class="text-neutral-gray/40">•</span>
+          <span class="flex items-center gap-1.5">
+            <i data-lucide="user" class="w-4 h-4"></i>
+            {post.author}
+          </span>
+        </>
+      )}
+    </div>
+    
+    <div class="mt-8 h-px w-24 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto"></div>
+  </header>
+
+  <article>
+    <NotionRenderer blocks={blocks} />
+  </article>
+
+  {post.tags && post.tags.length > 0 && (
+    <div class="mt-12 pt-8 border-t border-gray-100">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="text-sm font-semibold text-neutral-gray">Tags:</span>
+        {post.tags.map(tag => (
+          <span class="px-3 py-1 bg-neutral-paper rounded-full text-sm text-neutral-gray">
+            #{tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <div class="mt-12 pt-8 border-t border-gray-100">
+    <div class="flex items-center gap-4">
+      <span class="text-sm font-semibold text-neutral-gray">Chia sẻ:</span>
+      <div class="flex gap-3">
+        <a 
+          href={`https://www.facebook.com/sharer/sharer.php?u=${Astro.url}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-neutral-paper flex items-center justify-center text-neutral-gray hover:bg-[#1877F2] hover:text-white transition-all"
+          aria-label="Share on Facebook"
+        >
+          <i data-lucide="facebook" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section class="mt-20 p-8 sm:p-12 bg-primary rounded-2xl text-center shadow-xl">
+    <i data-lucide="sparkles" class="w-12 h-12 text-accent mx-auto mb-4"></i>
+    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white mb-4 tracking-tight">
+      Cần tư vấn cá nhân hóa?
+    </h3>
+    <p class="text-white/80 mb-6 max-w-lg mx-auto">
+      Đặt lịch tư vấn 1:1 để nhận phân tích Tử Vi chi tiết cho riêng bạn
+    </p>
+    <a 
+      href="/#booking" 
+      class="btn-hover-effect inline-flex items-center justify-center px-8 py-4 bg-accent text-neutral-dark rounded-full font-bold text-lg shadow-xl"
+    >
+      Đặt lịch tư vấn 1:1
+    </a>
+  </section>
+
+  <nav class="mt-16 pt-12 border-t border-gray-100">
+    <a 
+      href="/blog"
+      class="inline-flex items-center gap-2 text-primary hover:text-accent font-semibold transition-colors group"
+    >
+      <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+      Về trang Blog
+    </a>
+  </nav>
+</BlogLayout>

@@ -1,0 +1,540 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import BlogCard from '../components/BlogCard.astro';
+import { getPublishedPosts } from '../lib/notion';
+import StrategyVenn from '../components/StrategyVenn.astro';  
+
+const recentPosts = (await getPublishedPosts()).slice(0, 3);
+---
+
+<BaseLayout title="TN Consultant - Tử Vi & Bát Tự">
+  <Header />  <!-- ← ADD THIS LINE -->
+
+<!-- ============================================================================== -->
+<!-- SECTION 1 - HERO SECTION -->
+<!-- ============================================================================== -->
+
+<!-- Hero Section - Refined Typography -->
+<section class="relative min-h-screen flex items-end overflow-hidden">
+  <!-- Video Background -->
+  <div class="absolute inset-0 z-0">
+    <video 
+      autoplay 
+      loop 
+      muted 
+      playsinline
+      preload="auto"
+      class="w-full h-full object-cover"
+      id="hero-video"
+      style="background: #1e1e1e;"
+    >
+      <source src="/videos/night-sky.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Dark Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-dark/20 to-dark/85"></div>
+  </div>
+  
+  <!-- Hero Content - Bottom Left -->
+  <div class="relative z-10 w-full pb-16 sm:pb-20 lg:pb-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="max-w-4xl">
+        <!-- Main Headline - Mixed Fonts -->
+        <h1 class="text-white mb-4 animate-fade-in text-left">
+          <!-- Line 1 -->
+          <span class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95]" style="text-shadow: 0 4px 20px rgba(0,0,0,0.7);">
+            <span class="font-serif italic font-bold" style="color: #FFF0CA; text-shadow: 0 0 30px rgba(255,240,202,0.3);">Vận</span>
+            <span class="font-sans font-semibold"> tại Thiên.</span>
+          </span>
+          <!-- Line 2 -->
+          <span class="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95]" style="text-shadow: 0 4px 20px rgba(0,0,0,0.7);">
+            <span class="font-serif italic font-bold" style="color: #FFF0CA; text-shadow: 0 0 30px rgba(255,240,202,0.3);">Mệnh</span>
+            <span class="font-sans font-semibold"> tại Nhân.</span>
+          </span>
+        </h1>
+        
+        <!-- Subheader - Montserrat/Poppins -->
+        <h2 class="font-sans text-lg sm:text-xl lg:text-2xl text-white font-semibold mb-5 animate-fade-in text-left tracking-tight">
+          Dùng Bát Tự hiểu mình, dùng Tử Vi hiểu thời.
+        </h2>
+        
+        <!-- Description -->
+        <p class="font-sans text-sm sm:text-base lg:text-lg text-gray-light/90 font-normal max-w-3xl mb-7 leading-relaxed animate-fade-in text-left">
+          <span class="text-white font-semibold">Life Strategy</span>: hệ thống phân tích logic – nhận diện cơ hội, quản trị rủi ro, tối ưu năng lực, xây dựng lộ trình hành động chính xác – xoay thách thức thành lợi thế.
+        </p>
+        
+        <!-- CTA Buttons - Perfectly Centered Text -->
+        <div class="flex flex-col sm:flex-row items-start gap-4 animate-fade-in">
+          <a 
+            href="/life-strategy-blueprint" 
+            class="font-sans group inline-flex items-center justify-center px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 shadow-xl w-full sm:w-auto"
+            style="background-color: #FFF0CA; color: #1e1e1e;"
+          >
+            <span class="flex-1 text-center">Khám phá Life Strategy</span>
+          </a>
+          <a 
+            href="/booking" 
+            class="font-sans inline-flex items-center justify-center px-10 py-3.5 bg-transparent text-white border-2 border-white/30 rounded-full font-semibold text-base transition-all duration-300 hover:border-white hover:bg-white/10 w-full sm:w-auto"
+          >
+            <span class="text-center flex-1">Đặt lịch ngay</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('hero-video') as HTMLVideoElement;
+    
+    if (video) {
+      video.muted = true;
+      video.load();
+      
+      const playVideo = () => {
+        video.play().catch(err => console.log('Autoplay prevented:', err));
+      };
+      
+      video.addEventListener('loadedmetadata', playVideo);
+      
+      video.addEventListener('timeupdate', () => {
+        if (video.duration - video.currentTime < 0.1) {
+          video.currentTime = 0;
+        }
+      });
+      
+      document.addEventListener('click', playVideo, { once: true });
+    }
+  });
+</script>
+
+<!-- ============================================================================== -->
+<!-- SECTION 2 - WHAT IS LIFE STRATEGY -->
+<!-- ============================================================================== -->
+
+<!-- Life Strategy Section with Torii Background -->
+<section class="relative min-h-screen bg-dark overflow-hidden">
+  
+  <!-- Doorlight Background with Parallax -->
+  <div class="absolute inset-0 z-0" id="torii-parallax">
+    <div 
+      class="absolute -top-[20%] left-0 w-full h-[150%] bg-cover bg-center opacity-50"
+      style="background-image: url('/videos/door-light.jpg'); will-change: transform;"
+    ></div>
+    <div class="absolute inset-0 bg-dark/50"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 py-20 sm:py-28">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      
+      <!-- Opening Quote -->
+      <div class="max-w-4xl mx-auto mb-20">
+        <div class="pl-6 border-l-2 border-cream/40">
+          <p class="text-xl sm:text-1xl text-gray-light leading-relaxed italic">
+            "Không ai có thể chọn nơi mình sinh ra 
+            <span class="font-serif text-cream text-2xl sm:text-3xl font-semibold not-italic">nhưng</span> 
+            ta có thể chọn cách mình sẽ sống."
+          </p>
+        </div>
+      </div>
+
+      <!-- Two Column Layout -->
+      <div class="grid lg:grid-cols-2 gap-16 items-start mb-16">
+        
+        <!-- Left: Venn Diagram -->
+        <div class="order-2 lg:order-1">
+          <StrategyVenn />
+        </div>
+
+        <!-- Right: Text Content -->
+        <div class="order-1 lg:order-2 space-y-8">
+          
+          <!-- Section Header - NO BORDER, just text -->
+          <div>
+            <span class="inline-block text-xs font-bold text-cream uppercase tracking-[0.3em] mb-4">
+              INTRODUCTION
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              Life Strategy là gì?
+            </h2>
+            <div class="h-0.5 w-24 bg-gradient-to-r from-cream to-transparent mb-6"></div>
+          </div>
+
+          <!-- Main Description -->
+          <div class="space-y-6">
+            <p class="text-xl sm:text-2xl font-serif italic text-cream leading-relaxed">
+              Không phải bói toán.<br />
+              Đây là bản đồ chiến lược cuộc đời.
+            </p>
+
+            <p class="text-base sm:text-lg text-gray-light leading-relaxed">
+              <span class="text-white font-semibold">Life Strategy</span> kết hợp tinh hoa Tử Vi & Bát Tự với tư duy quản trị hiện đại, giúp bạn nhìn rõ "bàn cờ số phận" qua ba yếu tố:
+            </p>
+
+            <!-- Three Elements Inline -->
+            <div class="pl-5 border-l-2 border-cream py-3">
+              <p class="text-lg sm:text-xl font-serif italic text-cream">
+                Thời (Thiên) – Thế (Địa) – Lực (Nhân)
+              </p>
+            </div>
+
+            <p class="text-base sm:text-lg text-gray-light leading-relaxed">
+              Chúng tôi phân tích dữ kiện để bạn tự đặt những nước cờ quyết định.
+            </p>
+
+            <!-- Learn More - Seamless inline link -->
+            <p class="text-base sm:text-lg text-gray-light">
+              <button 
+                id="expand-details-btn"
+                class="inline-flex items-center gap-1 text-cream hover:text-white transition-colors text-base group underline decoration-cream/30 hover:decoration-cream"
+              >
+                <span>Tìm hiểu thêm</span>
+                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:translate-y-0.5"></i>
+              </button>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Expandable Details Section -->
+      <div id="expanded-details" class="hidden">
+
+        <!-- 3-Layer Model - Tighter Spacing, Larger Text -->
+        <div class="mb-12">
+          <h3 class="text-center text-sm font-bold text-cream uppercase tracking-[0.2em] mb-8">
+            Mô hình 3 lớp phân tích
+          </h3>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- Card 1: Core -->
+            <div class="glass rounded-2xl p-6 border border-cream/10 hover:border-cream transition-all duration-300 hover:bg-cream/5 group relative overflow-hidden">
+              <div class="absolute top-0 right-0 text-[6rem] font-bold text-cream/5 -mt-4 -mr-4 leading-none">01</div>
+              <div class="relative z-10">
+                <div class="mb-4">
+                  <i data-lucide="user-check" class="w-9 h-9 text-cream"></i>
+                </div>
+                <h4 class="font-serif text-lg font-bold text-white mb-1">
+                  Lớp Thấu Hiểu (Core)
+                </h4>
+                <p class="text-xs font-semibold text-cream mb-3">Bát Tự</p>
+                <p class="text-sm text-gray-light leading-relaxed mb-4">
+                  Giải mã "DNA năng lượng" cá nhân: điểm mạnh/yếu bẩm sinh, động lực cốt lõi, mẫu hình hành vi.
+                </p>
+                <p class="text-xs italic text-cream/80">
+                  → Bạn biết rõ mình là ai và mình mạnh ở đâu.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2: Flow -->
+            <div class="glass rounded-2xl p-6 border border-cream/10 hover:border-cream transition-all duration-300 hover:bg-cream/5 group relative overflow-hidden">
+              <div class="absolute top-0 right-0 text-[6rem] font-bold text-cream/5 -mt-4 -mr-4 leading-none">02</div>
+              <div class="relative z-10">
+                <div class="mb-4">
+                  <i data-lucide="trending-up" class="w-9 h-9 text-cream"></i>
+                </div>
+                <h4 class="font-serif text-lg font-bold text-white mb-1">
+                  Lớp Thời Vận (Flow)
+                </h4>
+                <p class="text-xs font-semibold text-cream mb-3">Tử Vi</p>
+                <p class="text-sm text-gray-light leading-relaxed mb-4">
+                  Quét chu kỳ thịnh suy, nhận diện cơ hội & rủi ro theo Đại vận và Lưu niên.
+                </p>
+                <p class="text-xs italic text-cream/80">
+                  → Bạn biết khi nào nên tiến, khi nào nên lùi.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 3: Action -->
+            <div class="glass rounded-2xl p-6 border border-cream/10 hover:border-cream transition-all duration-300 hover:bg-cream/5 group relative overflow-hidden">
+              <div class="absolute top-0 right-0 text-[6rem] font-bold text-cream/5 -mt-4 -mr-4 leading-none">03</div>
+              <div class="relative z-10">
+                <div class="mb-4">
+                  <i data-lucide="target" class="w-9 h-9 text-cream"></i>
+                </div>
+                <h4 class="font-serif text-lg font-bold text-white mb-1">
+                  Lớp Hành Động (Action)
+                </h4>
+                <p class="text-xs font-semibold text-cream mb-3">Tư duy chiến lược</p>
+                <p class="text-sm text-gray-light leading-relaxed mb-4">
+                  Chuyển hóa tín hiệu huyền học thành kế hoạch cụ thể: dùng tiền, dùng quyền hay dùng nhân tâm.
+                </p>
+                <p class="text-xs italic text-cream/80">
+                  → Bạn có lộ trình hành động chính xác.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefits Grid - Tighter Spacing -->
+        <div class="mb-10">
+          <h3 class="text-center text-sm font-bold text-cream uppercase tracking-[0.2em] mb-8">
+            Bạn nhận được gì?
+          </h3>
+          
+          <div class="grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-cream/5 transition-colors">
+              <i data-lucide="lightbulb" class="w-5 h-5 text-cream flex-shrink-0 mt-0.5"></i>
+              <div>
+                <h5 class="font-semibold text-white text-base mb-1">Rõ ràng</h5>
+                <p class="text-sm text-gray-light leading-relaxed">Hiểu nguyên nhân thất bại quá khứ, định hướng thành công tương lai.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-cream/5 transition-colors">
+              <i data-lucide="shield-check" class="w-5 h-5 text-cream flex-shrink-0 mt-0.5"></i>
+              <div>
+                <h5 class="font-semibold text-white text-base mb-1">Kiểm soát</h5>
+                <p class="text-sm text-gray-light leading-relaxed">Chủ động chuẩn bị kịch bản ứng phó mọi biến cố.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-cream/5 transition-colors">
+              <i data-lucide="zap" class="w-5 h-5 text-cream flex-shrink-0 mt-0.5"></i>
+              <div>
+                <h5 class="font-semibold text-white text-base mb-1">Tối ưu</h5>
+                <p class="text-sm text-gray-light leading-relaxed">Đặt đúng việc vào đúng thời điểm, không lãng phí nguồn lực.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-cream/5 transition-colors">
+              <i data-lucide="heart" class="w-5 h-5 text-cream flex-shrink-0 mt-0.5"></i>
+              <div>
+                <h5 class="font-semibold text-white text-base mb-1">An tâm</h5>
+                <p class="text-sm text-gray-light leading-relaxed">Bình an nội tại khi đã nắm được luật chơi của tạo hóa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample PDF Report Button - Closer spacing -->
+        <div class="text-center mb-12">
+          <button 
+            class="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-dark border-2 border-cream/30 text-cream rounded-full font-semibold text-sm transition-all duration-300 hover:border-cream hover:bg-cream/10 cursor-not-allowed opacity-60"
+            disabled
+          >
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            <span>Xem mẫu PDF Report</span>
+            <span class="text-xs bg-cream/20 px-2 py-0.5 rounded-full">Sắp ra mắt</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main CTA - Always visible -->
+      <div class="text-center">
+        <a 
+          href="/booking" 
+          class="inline-flex items-center justify-center px-12 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 shadow-2xl w-full sm:w-auto group"
+          style="background-color: #FFF0CA; color: #1e1e1e;"
+        >
+          Đặt lịch tư vấn
+          <i data-lucide="arrow-right" class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Kích hoạt icon ngay khi trang tải xong (Sửa lỗi mất mũi tên arrow)
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+
+    // 2. Xử lý Video Hero (Đảm bảo video chạy)
+    const video = document.getElementById('hero-video');
+    if (video) {
+      video.muted = true;
+      const playVideo = () => {
+        video.play().catch(err => console.log('Autoplay prevented:', err));
+      };
+      video.addEventListener('loadedmetadata', playVideo);
+      // Thử play ngay lập tức nếu đã load xong
+      if (video.readyState >= 3) {
+        playVideo();
+      }
+    }
+  });
+
+  // 3. Xử lý Parallax Mượt (Dùng requestAnimationFrame)
+  const handleParallax = () => {
+    // Danh sách các phần tử cần hiệu ứng Parallax
+    // Đảm bảo bạn đã thêm id="blog-parallax" vào thẻ div ảnh nền ở Section 3
+    const parallaxItems = [
+      { id: 'torii-parallax', speed: 0.3 }, 
+      { id: 'blog-parallax', speed: 0.3 }   
+    ];
+
+    parallaxItems.forEach(item => {
+      const el = document.getElementById(item.id);
+      if (!el) return;
+
+      const section = el.closest('section'); // Hoặc cha của nó là div absolute
+      // Vì cấu trúc HTML của bạn hơi khác, ta lấy section cha gần nhất
+      const parentSection = el.closest('section') || el.parentElement;
+      
+      if (!parentSection) return;
+
+      const rect = parentSection.getBoundingClientRect();
+      
+      // Chỉ tính toán khi section lọt vào màn hình
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        // Tính toán độ dịch chuyển
+        const offset = (window.innerHeight - rect.top) * item.speed;
+        // Di chuyển phần tử con đầu tiên (hoặc chính nó nếu là bg image div)
+        const target = el.firstElementChild || el; 
+        
+        // Nếu el là container chứa ảnh (như section 2), ta chỉnh con nó.
+        // Nếu el chính là thẻ div ảnh (như section 3 mới sửa), ta chỉnh chính nó.
+        if (item.id === 'torii-parallax') {
+             if (el.firstElementChild) {
+                 (el.firstElementChild as HTMLElement).style.transform = `translateY(${offset * 0.5}px)`;
+             }
+        } else {
+             el.style.transform = `translateY(${offset * 0.5}px)`;
+        }
+      }
+    });
+  };
+
+  window.addEventListener('scroll', () => {
+    requestAnimationFrame(handleParallax);
+  });
+
+  // 4. Xử lý Accordion (Nút Tìm hiểu thêm)
+  const expandBtn = document.getElementById('expand-details-btn');
+  const expandedDetails = document.getElementById('expanded-details');
+  
+  expandBtn?.addEventListener('click', () => {
+    const isHidden = expandedDetails?.classList.contains('hidden');
+    
+    if (isHidden) {
+      expandedDetails?.classList.remove('hidden');
+      expandedDetails?.classList.add('animate-fade-in');
+      expandBtn.innerHTML = `
+        <span>Thu gọn</span>
+        <i data-lucide="chevron-up" class="w-4 h-4"></i>
+      `;
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+      
+      setTimeout(() => {
+        expandedDetails?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    } else {
+      expandedDetails?.classList.add('hidden');
+      expandBtn.innerHTML = `
+        <span>Tìm hiểu thêm</span>
+        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+      `;
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+  });
+</script>
+
+<!-- ============================================================================== -->
+<!-- SECTION 3 - BLOGS -->
+<!-- ============================================================================== -->
+
+{recentPosts.length > 0 && (
+  <section class="relative py-20 sm:py-28 bg-dark overflow-hidden">
+    
+   <div class="absolute inset-0 z-0">
+       <div 
+         id="blog-parallax"
+         class="absolute -top-[20%] left-0 w-full h-[150%] bg-cover bg-center opacity-25"
+         style="background-image: url('videos/tin-nguyen.jpg'); will-change: transform;"
+       ></div>
+       
+       <div class="absolute inset-0 bg-dark/90"></div>
+
+       <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-dark to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      
+      <div class="text-center mb-16">
+        <span class="inline-block text-xs font-bold text-cream uppercase tracking-[0.3em] mb-4">
+          INSIGHTS
+        </span>
+        <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+          Góc Nhìn & Chia Sẻ
+        </h2>
+        <div class="h-0.5 w-24 bg-gradient-to-r from-cream to-transparent mx-auto mb-6"></div>
+        <p class="text-lg text-gray-light max-w-2xl mx-auto leading-relaxed">
+          Khám phá những bài viết chuyên sâu về Tử Vi, Bát Tự và tư duy chiến lược cuộc đời
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {recentPosts.map(post => (
+          <BlogCard post={post} />
+        ))}
+      </div>
+      
+      <div class="text-center">
+        <a 
+          href="/blog" 
+          class="inline-flex items-center gap-2 text-cream hover:text-white transition-colors group font-medium"
+        >
+          <span>Xem tất cả bài viết</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+)}
+
+<!-- ============================================================================== -->
+<!-- SECTION 4 - CALL -->
+<!-- ============================================================================== -->
+  <section class="relative py-24 sm:py-32 overflow-hidden">
+  
+  <div class="absolute inset-0 z-0">
+    <div 
+      class="absolute inset-0 w-full h-full bg-cover bg-center"
+      style="background-image: url('videos/audience.jpg');"
+    ></div>
+    <div class="absolute inset-0 bg-dark/90"></div>
+  </div>
+  
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
+      Not Sure <br class="hidden sm:block" />
+      Where To Start?
+    </h2>
+    
+    <p class="text-lg sm:text-xl text-gray-light mb-10 max-w-2xl mx-auto leading-relaxed">
+      We’re here to help. Just reach out to us and we’ll guide you to your best next step, whether it’s a consultation, course or supportive community
+    </p>
+    
+    <a 
+      href="#contact" 
+      class="inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 shadow-xl"
+      style="background-color: #FFF0CA; color: #1e1e1e;"
+    >
+      Contact Us
+    </a>
+  </div>
+
+</section>
+
+</BaseLayout>
+
+<style>
+  /* Ensure video covers properly */
+  video {
+    min-width: 100%;
+    min-height: 100%;
+  }
+</style>

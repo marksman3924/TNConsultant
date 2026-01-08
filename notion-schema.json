@@ -1,0 +1,28 @@
+{
+  "title": "TN Consultant Blog",
+  "properties": {
+    "Name": { "title": {} },
+    "Slug": { "rich_text": {} },
+    "Status": {
+      "select": {
+        "options": [
+          { "name": "Draft", "color": "gray" },
+          { "name": "Published", "color": "green" }
+        ]
+      }
+    },
+    "Date": { "date": {} },
+    "Author": { "people": {} },
+    "Tags": {
+      "multi_select": {
+        "options": [
+          { "name": "Tử Vi", "color": "purple" },
+          { "name": "Phong Thủy", "color": "blue" },
+          { "name": "BaZi", "color": "red" },
+          { "name": "Chiến Lược", "color": "yellow" }
+        ]
+      }
+    },
+    "Excerpt": { "rich_text": {} }
+  }
+}

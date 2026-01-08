@@ -1,0 +1,50 @@
+---
+// Header.astro
+---
+
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-transform duration-300 translate-y-0">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4">
+    <div class="glass-header rounded-full border border-white/10 px-8 py-3 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold to-gold/60 flex items-center justify-center">
+          <span class="text-dark font-bold text-lg">TN</span>
+        </div>
+        <div class="hidden sm:block">
+          <div class="text-white font-semibold">TN Consultant</div>
+          <div class="text-gray-light text-xs">TỬ VI & BAZI</div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/" class="text-white hover:text-cream transition-colors">Trang Chủ</a>
+        <a href="/blog" class="text-gray-light hover:text-cream transition-colors">Blog</a>
+        <a href="/life-strategy-blueprint" class="text-gray-light hover:text-cream transition-colors">What is LSB ©?</a>
+        <a href="/ve-toi" class="text-gray-light hover:text-cream transition-colors">Về Tôi</a>
+      </div>
+
+      <!-- CTA Button -->
+      <a 
+        href="/booking" 
+        class="px-6 py-2 rounded-full font-semibold text-sm transition-transform hover:scale-105"
+        style="background-color: #FFF0CA; color: #1e1e1e;"
+      >
+        Đặt Lịch
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-white">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .glass-header {
+    background: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+</style>

@@ -1,0 +1,151 @@
+---
+// Cosmic Trinity - Absolute Perfect Positioning
+---
+
+<div class="cosmic-trinity-wrapper w-full py-16">
+  <div class="relative mx-auto" style="width: 1000px; height: 700px;">
+    
+    <!-- SVG Triangle Background - Layer 0 -->
+    <svg class="absolute inset-0 w-full h-full z-0" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="triangleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:0.3" />
+          <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:0.1" />
+        </linearGradient>
+      </defs>
+      <path 
+        d="M 500 80 L 200 580 M 200 580 L 800 580 M 800 580 L 500 80" 
+        fill="none" 
+        stroke="url(#triangleGradient)" 
+        stroke-width="2"
+        stroke-dasharray="4,6"
+      />
+    </svg>
+
+    <!-- Center Label -->
+    <div class="absolute z-10" style="top: 320px; left: 440px;">
+      <div class="text-center pointer-events-none">
+        <div class="text-xs font-bold text-cream/40 uppercase tracking-widest mb-1">THE</div>
+        <div class="text-lg font-serif font-bold text-white/50">Cosmic</div>
+        <div class="text-lg font-serif font-bold text-white/50">Trinity</div>
+      </div>
+    </div>
+
+    <!-- THIÊN - Top (500, 50) -->
+    <div class="absolute z-20" style="top: 50px; left: 310px;">
+      <div class="flex items-center gap-5">
+        <!-- Circle -->
+        <div 
+          class="trinity-circle w-[180px] h-[180px] rounded-full flex flex-col items-center justify-center relative"
+          style="background: rgba(30, 30, 30, 0.95); border: 2px solid rgba(212, 175, 55, 0.6);"
+        >
+          <div class="absolute -top-3 px-4 py-1.5 rounded-full" style="background-color: #D4AF37;">
+            <span class="text-xs font-bold text-dark uppercase tracking-wider">HEAVEN</span>
+          </div>
+          <div class="mt-2">
+            <h3 class="text-6xl font-bold text-center leading-none mb-2" style="color: #D4AF37;">天</h3>
+            <p class="text-sm text-gray-light text-center">/Thiên/</p>
+          </div>
+        </div>
+        
+        <!-- Description -->
+        <div class="w-[240px] h-[180px] p-4 glass rounded-xl border border-cream/10 flex flex-col justify-center">
+          <div class="flex items-start gap-2 mb-2">
+            <span class="text-xl">🌌</span>
+            <h4 class="text-sm font-bold text-white leading-tight">THIÊN (Yếu tố Trời)</h4>
+          </div>
+          <div class="space-y-1.5 text-xs text-gray-light leading-relaxed">
+            <p><span class="text-white font-medium">Dữ liệu:</span> Ngày - Tháng - Năm - Giờ sinh</p>
+            <p><span class="text-white font-medium">Công cụ:</span> Tử Vi, Bát Tự, Thần Số Học</p>
+            <p><span class="text-white font-medium">Bản chất:</span> "Thông số phần cứng" được cài đặt sẵn</p>
+            <p class="text-cream font-medium">Tính chất: Hằng số – Khó thay đổi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ĐỊA - Bottom Left (200, 500) -->
+    <div class="absolute z-20" style="top: 500px; left: 0;">
+      <div class="flex items-center gap-5">
+        <!-- Description LEFT -->
+        <div class="w-[240px] h-[180px] p-4 glass rounded-xl border border-cream/10 flex flex-col justify-center">
+          <div class="flex items-start gap-2 mb-2">
+            <span class="text-xl">🌍</span>
+            <h4 class="text-sm font-bold text-white leading-tight">ĐỊA (Yếu tố Đất)</h4>
+          </div>
+          <div class="space-y-1.5 text-xs text-gray-light leading-relaxed">
+            <p><span class="text-white font-medium">Dữ liệu:</span> Gia đình, văn hóa, thời đại</p>
+            <p><span class="text-white font-medium">Bản chất:</span> "Môi trường vận hành" xung quanh bạn</p>
+            <p class="text-cream font-medium">Tính chất: Biến thiên – Có thể chọn lựa</p>
+          </div>
+        </div>
+        
+        <!-- Circle -->
+        <div 
+          class="trinity-circle w-[180px] h-[180px] rounded-full flex flex-col items-center justify-center relative"
+          style="background: rgba(30, 30, 30, 0.95); border: 2px solid rgba(212, 175, 55, 0.6);"
+        >
+          <div class="absolute -top-3 px-4 py-1.5 rounded-full" style="background-color: #D4AF37;">
+            <span class="text-xs font-bold text-dark uppercase tracking-wider">EARTH</span>
+          </div>
+          <div class="mt-2">
+            <h3 class="text-6xl font-bold text-center leading-none mb-2" style="color: #D4AF37;">地</h3>
+            <p class="text-sm text-gray-light text-center">/Địa/</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NHÂN - Bottom Right (800, 500) -->
+    <div class="absolute z-20" style="top: 500px; right: 0;">
+      <div class="flex items-center gap-5">
+        <!-- Circle -->
+        <div 
+          class="trinity-circle w-[180px] h-[180px] rounded-full flex flex-col items-center justify-center relative"
+          style="background: rgba(30, 30, 30, 0.95); border: 2px solid rgba(212, 175, 55, 0.6);"
+        >
+          <div class="absolute -top-3 px-4 py-1.5 rounded-full" style="background-color: #D4AF37;">
+            <span class="text-xs font-bold text-dark uppercase tracking-wider">MAN</span>
+          </div>
+          <div class="mt-2">
+            <h3 class="text-6xl font-bold text-center leading-none mb-2" style="color: #D4AF37;">人</h3>
+            <p class="text-sm text-gray-light text-center">/Nhân/</p>
+          </div>
+        </div>
+        
+        <!-- Description RIGHT -->
+        <div class="w-[240px] h-[180px] p-4 glass rounded-xl border border-cream/10 flex flex-col justify-center">
+          <div class="flex items-start gap-2 mb-2">
+            <span class="text-xl">👤</span>
+            <h4 class="text-sm font-bold text-white leading-tight">NHÂN (Yếu tố Người)</h4>
+          </div>
+          <div class="space-y-1.5 text-xs text-gray-light leading-relaxed">
+            <p><span class="text-white font-medium">Dữ liệu:</span> Tri thức, nghị lực, quyết định</p>
+            <p><span class="text-white font-medium">Bản chất:</span> "Hành vi người dùng" - cách bạn phản ứng</p>
+            <p class="text-cream font-medium">Tính chất: Biến số quyết định</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .trinity-circle {
+    transition: all 0.3s ease;
+  }
+
+  .trinity-circle:hover {
+    transform: scale(1.08);
+    border: 2px solid rgba(212, 175, 55, 1) !important;
+    box-shadow: 0 0 40px -5px rgba(212, 175, 55, 0.6);
+  }
+
+  /* Responsive - Hide on small screens */
+  @media (max-width: 1100px) {
+    .cosmic-trinity-wrapper {
+      overflow-x: auto;
+    }
+  }
+</style>

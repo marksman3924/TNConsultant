@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getPublishedPosts } from '../../lib/notion';
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout title="Blog - TN Consultant" description="Khám phá tri thức Tử Vi, BaZi và chiến lược nghề nghiệp">
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-gradient-to-b from-neutral-paper to-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
+        <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+        Blog
+      </div>
+      
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 tracking-tight">
+        Tri Thức Tử Vi
+      </h1>
+      
+      <p class="text-xl text-neutral-gray max-w-2xl mx-auto leading-relaxed">
+        Khám phá chiến lược nghề nghiệp qua lăng kính BaZi và Tử Vi
+      </p>
+      
+      <!-- Category Filter (Optional - can be implemented later) -->
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <button class="px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold">
+          Tất cả
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white border border-gray-200 text-neutral-gray text-sm font-semibold hover:border-primary hover:text-primary transition-colors">
+          BaZi
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white border border-gray-200 text-neutral-gray text-sm font-semibold hover:border-primary hover:text-primary transition-colors">
+          Tử Vi
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white border border-gray-200 text-neutral-gray text-sm font-semibold hover:border-primary hover:text-primary transition-colors">
+          Career
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {posts.length > 0 ? (
+        <>
+          <!-- Post Count -->
+          <div class="mb-8 text-neutral-gray text-sm">
+            Hiển thị {posts.length} bài viết
+          </div>
+          
+          <!-- Grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map(post => (
+              <BlogCard post={post} />
+            ))}
+          </div>
+          
+          <!-- Pagination (Optional - implement when you have many posts) -->
+          <!-- 
+          <div class="mt-16 flex justify-center gap-2">
+            <button class="px-4 py-2 rounded-lg border border-gray-200 text-neutral-gray hover:border-primary hover:text-primary transition-colors">
+              Previous
+            </button>
+            <button class="px-4 py-2 rounded-lg bg-primary text-white font-semibold">
+              1
+            </button>
+            <button class="px-4 py-2 rounded-lg border border-gray-200 text-neutral-gray hover:border-primary hover:text-primary transition-colors">
+              2
+            </button>
+            <button class="px-4 py-2 rounded-lg border border-gray-200 text-neutral-gray hover:border-primary hover:text-primary transition-colors">
+              Next
+            </button>
+          </div>
+          -->
+        </>
+      ) : (
+        <!-- Empty State -->
+        <div class="text-center py-20">
+          <i data-lucide="file-text" class="w-16 h-16 text-neutral-gray/30 mx-auto mb-4"></i>
+          <h3 class="text-xl font-bold text-neutral-dark mb-2">
+            Chưa có bài viết nào
+          </h3>
+          <p class="text-neutral-gray">
+            Hãy quay lại sau để đọc những bài viết mới nhất về Tử Vi và BaZi
+          </p>
+          <a 
+            href="/" 
+            class="inline-flex items-center gap-2 mt-6 text-primary hover:text-accent font-semibold transition-colors"
+          >
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            Về trang chủ
+          </a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="py-20 bg-neutral-paper">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-white rounded-2xl p-8 sm:p-12 shadow-cream">
+        <i data-lucide="mail" class="w-12 h-12 text-accent mx-auto mb-4"></i>
+        <h3 class="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4">
+          Nhận bài viết mới qua email
+        </h3>
+        <p class="text-neutral-gray mb-8 max-w-lg mx-auto">
+          Đăng ký để không bỏ lỡ những phân tích và chiến lược mới nhất về Tử Vi, BaZi
+        </p>
+        
+        <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input 
+            type="email" 
+            placeholder="Email của bạn"
+            class="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-primary transition-colors"
+            required
+          />
+          <button 
+            type="submit"
+            class="px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-hover transition-colors"
+          >
+            Đăng ký
+          </button>
+        </form>
+        
+        <p class="text-xs text-neutral-gray mt-4">
+          Chúng tôi không spam. Bạn có thể hủy đăng ký bất cứ lúc nào.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

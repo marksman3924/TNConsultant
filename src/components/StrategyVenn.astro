@@ -1,0 +1,122 @@
+---
+// StrategyVenn.astro - All text centered perfectly
+interface Props {
+  className?: string;
+}
+
+const { className = '' } = Astro.props;
+---
+
+<div class={`venn-container ${className}`}>
+  <div class="relative w-full max-w-[700px] aspect-square mx-auto">
+    <div class="relative w-full h-full">
+      
+      <!-- Center Yin-Yang Icon -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 pointer-events-none transition-all duration-300" id="center-icon">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-full bg-dark/80 border border-cream/40 shadow-[0_0_40px_-5px_rgba(255,240,202,0.2)] backdrop-blur-sm">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 sm:w-10 sm:h-10 text-cream">
+            <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="1.5" fill="none" class="opacity-50"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604C19.9926 7.26472 21 9.51472 21 12C21 16.9706 16.9706 21 12 21ZM12 5C10.067 5 8.5 6.567 8.5 8.5C8.5 10.433 10.067 12 12 12C13.933 12 15.5 13.567 15.5 15.5C15.5 17.433 13.933 19 12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5Z" fill="currentColor"/>
+            <circle cx="12" cy="8.5" r="1.5" class="text-dark" fill="currentColor"/>
+            <circle cx="12" cy="15.5" r="1.5" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Circle 1: THỜI (Heaven) - Centered -->
+      <div 
+        class="venn-circle absolute top-0 left-1/2 -translate-x-1/2 w-[68%] h-[68%] rounded-full bg-[rgba(255,240,202,0.03)] border border-[rgba(255,240,202,0.3)] backdrop-blur-[1px]"
+        data-circle="heaven"
+      >
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-50">
+          <div class="venn-text-default opacity-100 transition-opacity duration-300 text-center">
+            <h3 class="text-4xl sm:text-5xl font-serif font-medium text-white mb-2 tracking-wide">Thời</h3>
+            <p class="text-base sm:text-lg italic font-sans opacity-90 text-cream">/thiên/</p>
+          </div>
+          <div class="venn-text-hover opacity-0 absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 px-8">
+            <h3 class="text-2xl sm:text-3xl font-serif text-white mb-3 text-center">Thời <span class="text-lg opacity-70 text-cream">/thiên/</span></h3>
+            <div class="w-12 h-[1px] bg-cream mb-4 opacity-60"></div>
+            <p class="text-sm sm:text-base text-gray-light font-light leading-relaxed max-w-[240px] text-center">
+              Nhận diện chu kỳ thời vận, biết khi nào nên tiến, khi nào nên lùi
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Circle 2: THẾ (Earth) - Centered -->
+      <div 
+        class="venn-circle absolute bottom-0 left-0 w-[68%] h-[68%] rounded-full bg-[rgba(255,240,202,0.03)] border border-[rgba(255,240,202,0.3)] backdrop-blur-[1px]"
+        data-circle="earth"
+      >
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-50">
+          <div class="venn-text-default opacity-100 transition-opacity duration-300 text-center">
+            <h3 class="text-4xl sm:text-5xl font-serif font-medium text-white mb-2 tracking-wide">Thế</h3>
+            <p class="text-base sm:text-lg italic font-sans opacity-90 text-cream">/địa/</p>
+          </div>
+          <div class="venn-text-hover opacity-0 absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 px-8">
+            <h3 class="text-2xl sm:text-3xl font-serif text-white mb-3 text-center">Thế <span class="text-lg opacity-70 text-cream">/địa/</span></h3>
+            <div class="w-12 h-[1px] bg-cream mb-4 opacity-60"></div>
+            <p class="text-sm sm:text-base text-gray-light font-light leading-relaxed max-w-[240px] text-center">
+              Hiểu môi trường, địa thế, chọn đúng chiến trường để chiến thắng
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Circle 3: LỰC (Human) - Centered -->
+      <div 
+        class="venn-circle absolute bottom-0 right-0 w-[68%] h-[68%] rounded-full bg-[rgba(255,240,202,0.03)] border border-[rgba(255,240,202,0.3)] backdrop-blur-[1px]"
+        data-circle="human"
+      >
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-50">
+          <div class="venn-text-default opacity-100 transition-opacity duration-300 text-center">
+            <h3 class="text-4xl sm:text-5xl font-serif font-medium text-white mb-2 tracking-wide">Lực</h3>
+            <p class="text-base sm:text-lg italic font-sans opacity-90 text-cream">/nhân/</p>
+          </div>
+          <div class="venn-text-hover opacity-0 absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 px-8">
+            <h3 class="text-2xl sm:text-3xl font-serif text-white mb-3 text-center">Lực <span class="text-lg opacity-70 text-cream">/nhân/</span></h3>
+            <div class="w-12 h-[1px] bg-cream mb-4 opacity-60"></div>
+            <p class="text-sm sm:text-base text-gray-light font-light leading-relaxed max-w-[240px] text-center">
+              Tối ưu năng lực bản thân, biến điểm yếu thành lợi thế
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .venn-circle {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .venn-circle:hover {
+    background: rgba(30, 30, 30, 0.85) !important;
+    border: 2px solid rgba(255, 240, 202, 0.8) !important;
+    box-shadow: 0 0 30px -5px rgba(255, 240, 202, 0.3);
+    z-index: 30;
+  }
+
+  .venn-circle:hover .venn-text-default {
+    opacity: 0;
+  }
+
+  .venn-circle:hover .venn-text-hover {
+    opacity: 1;
+  }
+
+  /* Dim other circles when one is hovered */
+  .venn-container:has(.venn-circle:hover) .venn-circle:not(:hover) {
+    opacity: 0.4;
+    filter: blur(1px) grayscale(50%);
+  }
+
+  /* Hide center icon on hover */
+  .venn-container:has(.venn-circle:hover) #center-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+</style>
