@@ -15,5 +15,5 @@ export default defineConfig({
     format: 'file'
   },
   site: 'https://marksman3924.github.io',
-  base: 'TNConsultant'
+  base: '/TNConsultant'
 });

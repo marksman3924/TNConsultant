@@ -29,7 +29,7 @@ const recentPosts = (await getPublishedPosts()).slice(0, 3);
       id="hero-video"
       style="background: #1e1e1e;"
     >
-      <source src="/videos/night-sky.mp4" type="video/mp4">
+      <source src={import.meta.env.BASE_URL + '/videos/night-sky.mp4'} type="video/mp4">
     </video>
     
     <!-- Dark Gradient Overlay -->
@@ -67,14 +67,14 @@ const recentPosts = (await getPublishedPosts()).slice(0, 3);
         <!-- CTA Buttons - Perfectly Centered Text -->
         <div class="flex flex-col sm:flex-row items-start gap-4 animate-fade-in">
           <a 
-            href="/life-strategy-blueprint" 
+            href="/TNConsultant/life-strategy-blueprint" 
             class="font-sans group inline-flex items-center justify-center px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 shadow-xl w-full sm:w-auto"
             style="background-color: #FFF0CA; color: #1e1e1e;"
           >
             <span class="flex-1 text-center">Khám phá Life Strategy</span>
           </a>
           <a 
-            href="/booking" 
+            href="/TNConsultant/booking" 
             class="font-sans inline-flex items-center justify-center px-10 py-3.5 bg-transparent text-white border-2 border-white/30 rounded-full font-semibold text-base transition-all duration-300 hover:border-white hover:bg-white/10 w-full sm:w-auto"
           >
             <span class="text-center flex-1">Đặt lịch ngay</span>
@@ -121,7 +121,7 @@ const recentPosts = (await getPublishedPosts()).slice(0, 3);
   <div class="absolute inset-0 z-0" id="torii-parallax">
     <div 
       class="absolute -top-[20%] left-0 w-full h-[150%] bg-cover bg-center opacity-50"
-      style="background-image: url('/videos/door-light.jpg'); will-change: transform;"
+      style="background-image: url('/TNConsultant/videos/door-light.jp'); will-change: transform;"
     ></div>
     <div class="absolute inset-0 bg-dark/50"></div>
   </div>
@@ -330,7 +330,7 @@ const recentPosts = (await getPublishedPosts()).slice(0, 3);
       <!-- Main CTA - Always visible -->
       <div class="text-center">
         <a 
-          href="/booking" 
+          href="/TNConsultant/booking" 
           class="inline-flex items-center justify-center px-12 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 shadow-2xl w-full sm:w-auto group"
           style="background-color: #FFF0CA; color: #1e1e1e;"
         >
@@ -483,7 +483,7 @@ const recentPosts = (await getPublishedPosts()).slice(0, 3);
       
       <div class="text-center">
         <a 
-          href="/blog" 
+          href="/TNConsultant/blog" 
           class="inline-flex items-center gap-2 text-cream hover:text-white transition-colors group font-medium"
         >
           <span>Xem tất cả bài viết</span>
